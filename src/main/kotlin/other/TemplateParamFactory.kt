@@ -1,12 +1,9 @@
 package com.fdd.mvvmgenerator.core
 
-import com.intellij.openapi.module.ModuleUtil
-import com.intellij.psi.PsiDirectory
 import org.jetbrains.android.dom.manifest.Manifest
 import org.jetbrains.android.facet.AndroidFacet
 import org.jetbrains.android.facet.AndroidRootUtil
 import org.jetbrains.android.util.AndroidUtils
-import org.jetbrains.kotlin.idea.core.getPackage
 
 /**
  * Created by hxs

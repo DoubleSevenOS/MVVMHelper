@@ -39,6 +39,7 @@
             <depends>com.intellij.modules.java</depends>
 
 # 3.添加自己的模板代码
+    修改src->main->resources->META-INF->plugin
     参考other里的代码
 
 # 4.生成插件Jar

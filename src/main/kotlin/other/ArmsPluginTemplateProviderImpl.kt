@@ -2,9 +2,8 @@ package other
 
 import com.android.tools.idea.wizard.template.*
 import com.android.tools.idea.wizard.template.impl.activities.common.MIN_API
-import com.intellij.openapi.module.ModuleUtil
-import org.jetbrains.android.facet.AndroidFacet
 import java.io.File
+
 
 /**
  * Created on 2021/4/19 16:53
@@ -13,46 +12,83 @@ import java.io.File
 class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
     override fun getTemplates(): List<Template> = listOf(armsTemplate)
 
-    private val armsTemplate: Template
+    //相对路径，鼠标开始点击创建的位置
+    val fragmentDir = ".fragment"
+    val activityDir = ".activity"
+    val vmDir = ".viewmodel"
+    val modelDir = ".model"
+    lateinit var moduleTemplateData: ModuleTemplateData
+
+    val mBaseActivityJavaName = "BaseDataBindingActivity"
+    val mBaseActivityJavaPackage = "com.android.base.activity"
+
+    val mBaseActivityKtName = "BaseDataBindingActivity"
+    val mBaseActivityKtPackage = "com.android.basekt.activity"
+
+    val mBaseFragmentKtName = "BaseDataBindFragment"
+    val mBaseFragmentKtPackage = "com.android.basekt.fragment"
+
+    val mBaseFragmentJavaName = "BaseDataBindFragment"
+    val mBaseFragmentJavaPackage = "com.android.base.fragment"
+
+    val mBaseViewModelJavaName = "BaseViewModel"
+    val mBaseViewModelJavaPackage = "com.android.base.viewmodel"
+
+    val mBaseViewModelKtName = "BaseViewModel"
+    val mBaseViewModelKtPackage = "com.android.basekt.viewmodel"
+
+
+    val armsTemplate: Template
         get() = template {
             revision = 1
-            name = "LanShan MVVM Activity"
-            description = "一键创建蓝山base页面所需要的全部组件"
+            name = "Android MVVM Helper"
+            description = "一键生成模板代码，爽歪歪"
             minApi = MIN_API
             minBuildApi = MIN_API
-            category = Category.Activity
+            category = Category.Other
             formFactor = FormFactor.Mobile
-            screens = listOf(WizardUiContext.ActivityGallery, WizardUiContext.MenuEntry, WizardUiContext.NewProject, WizardUiContext.NewModule)
+            screens = listOf(
+                WizardUiContext.ActivityGallery,
+                WizardUiContext.MenuEntry,
+                WizardUiContext.NewProject,
+                WizardUiContext.NewModule
+            )
             thumb { File("template_blank_activity.png") }
 
             widgets(
-                    TextFieldWidget(pageName),
-                    PackageNameWidget(appPackageName),
-                    CheckBoxWidget(needActivity),
-                    TextFieldWidget(activityLayoutName),
-                    CheckBoxWidget(generateActivityLayout),
-                    TextFieldWidget(activityPackageName),
-                    CheckBoxWidget(needFragment),
-                    TextFieldWidget(fragmentLayoutName),
-                    CheckBoxWidget(generateFragmentLayout),
-                    TextFieldWidget(fragmentPackageName),
-                    CheckBoxWidget(needViewModel),
-                    TextFieldWidget(presenterPackageName),
-                    CheckBoxWidget(needModel),
-                    TextFieldWidget(modelPackageName),
-                    CheckBoxWidget(needBean),
-                    TextFieldWidget(beanPackageName),
-//                    CheckBoxWidget(needDagger),
-//
-//                    TextFieldWidget(moudlePackageName),
-                    LanguageWidget()
+                TextFieldWidget(pageName),
+                PackageNameWidget(appPackageName),
+                CheckBoxWidget(needActivity),
+                TextFieldWidget(activityPackageName),
+                TextFieldWidget(activityLayoutName),
+                //默认选中Activity，就生成xml
+                //CheckBoxWidget(generateActivityLayout),
+
+                CheckBoxWidget(needFragment),
+                TextFieldWidget(fragmentPackageName),
+                TextFieldWidget(fragmentLayoutName),
+                //默认选中Fragment，就生成xml
+                //CheckBoxWidget(generateFragmentLayout),
+
+                //是否需要VM，默认选中，不可选择
+                CheckBoxWidget(needViewModel),
+                TextFieldWidget(viewModelPackageName),
+                CheckBoxWidget(needModel),
+                TextFieldWidget(modelPackageName),
+                CheckBoxWidget(needBean),
+                TextFieldWidget(beanPackageName),
+                LanguageWidget()
             )
 
             //创建所需文件
             recipe = { te ->
-                //val (projectData, srcOut, resOut) = te as ModuleTemplateData
-                armsRecipe(this@ArmsPluginTemplateProviderImpl, (te as ModuleTemplateData))
+                //val (projectData, srcOut, resOut) = te as ModuleTemplateDat
+                moduleTemplateData = (te as ModuleTemplateData)
+                println("===armsRecipe====")
+                armsRecipe(this@ArmsPluginTemplateProviderImpl, moduleTemplateData)
             }
+
+
         }
 
 
@@ -61,7 +97,7 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
         name = "Activity/Fragment Name"
         constraints = listOf(Constraint.UNIQUE, Constraint.NONEMPTY, Constraint.STRING)
         default = "Main"
-        help = "请填写页面名,如填写 Main,会自动生成 MainActivity, MainPresenter 等文件"
+        help = "请填写页面名,如填写 Main,会自动生成 MainActivity, MainViewModel 等文件"
     }
 
     /** 包名 */
@@ -99,11 +135,11 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
 
     /** Activity 路径 */
     val activityPackageName = stringParameter {
-        name = "Ativity Package Name"
+        name = ""
         constraints = listOf(Constraint.PACKAGE, Constraint.STRING)
-        suggest = { "${appPackageName.value}.ui.activity" }
+        suggest = { "${appPackageName.value}${activityDir}" }
         visible = { needActivity.value }
-        default = "${appPackageName.value}.ui.activity"
+        default = "${appPackageName.value}${activityDir}"
         help = "Activity 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
     }
 
@@ -134,10 +170,10 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
 
     /** fragment 路径 */
     val fragmentPackageName = stringParameter {
-        name = "Fragment Package Name"
+        name = ""
         constraints = listOf(Constraint.PACKAGE, Constraint.STRING)
-        suggest = { "${appPackageName.value}.ui.fragment" }
-        default = "${appPackageName.value}.ui.fragment"
+        suggest = { "${appPackageName.value}${fragmentDir}" }
+        default = "${appPackageName.value}${fragmentDir}"
         visible = { needFragment.value }
         help = "Fragment 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
     }
@@ -151,28 +187,36 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
     val presenterPackageName = stringParameter {
         name = "VM Package Name"
         constraints = listOf(Constraint.PACKAGE, Constraint.STRING)
-        suggest = { "${appPackageName.value}.vm" }
-        default = "${appPackageName.value}.vm"
+        suggest = { "${appPackageName.value}${vmDir}" }
+        default = "${appPackageName.value}${vmDir}"
         visible = { needViewModel.value }
         help = "Presenter 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
     }
+    val viewModelPackageName = stringParameter {
+        name = "VM Package Name"
+        constraints = listOf(Constraint.PACKAGE, Constraint.STRING)
+        suggest = { "${appPackageName.value}${vmDir}" }
+        default = "${appPackageName.value}${vmDir}"
+        visible = { needViewModel.value }
+        help = "ViewModel 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
+    }
     val needModel = booleanParameter {
         name = "Generate Model"
-        default = true
+        default = false
         help = "是否需要生成 Model ? 不勾选则不生成"
     }
     val modelPackageName = stringParameter {
         name = "Model Package Name"
         constraints = listOf(Constraint.PACKAGE, Constraint.STRING)
-        suggest = { "${appPackageName.value}.model" }
-        default = "${appPackageName.value}.model"
+        suggest = { "${appPackageName.value}${modelDir}" }
+        default = "${appPackageName.value}${modelDir}"
         visible = { needModel.value }
         help = "Model 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
     }
 
     val needBean = booleanParameter {
         name = "Generate Bean"
-        default = true
+        default = false
         help = "是否需要生成 Bean ? 不勾选则不生成"
     }
     val beanPackageName = stringParameter {
@@ -180,7 +224,7 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
         constraints = listOf(Constraint.PACKAGE, Constraint.STRING)
         suggest = { "${appPackageName.value}.bean" }
         default = "${appPackageName.value}.bean"
-        visible = { needModel.value }
+        visible = { needBean.value }
         help = "Bean 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
     }
 
@@ -200,4 +244,14 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
         visible = { needDagger.value }
         help = "Moudle 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
     }
+
+
+//    ${
+//        if (data.projectTemplateData.applicationPackage == null || data.projectTemplateData.applicationPackage!!.length == 0) {
+//            """${provider.presenterPackageName.value}"""
+//        } else {
+//            """${data.projectTemplateData.applicationPackage}"""
+//        }
+//    }
+
 }

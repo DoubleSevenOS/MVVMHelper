@@ -7,14 +7,14 @@ fun armsManifest(provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateD
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="${
     if (data.projectTemplateData.applicationPackage == null || data.projectTemplateData.applicationPackage!!.length == 0) {
-        """${provider.activityPackageName.value}"""
+        """${data.packageName}"""
     } else {
         """${data.projectTemplateData.applicationPackage}"""
     }
 }">
     <application>
 ${
-    if (data.isNewModule) {
+    if (data.isLibrary) {
         """
         <activity android:name="${provider.activityPackageName.value}.${provider.pageName.value}Activity"
          android:screenOrientation="portrait">

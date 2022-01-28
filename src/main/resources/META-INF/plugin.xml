@@ -1,9 +1,9 @@
 <idea-plugin>
-    <id>com.lanshan.base</id>
-    <name>LS-Base</name>
-    <vendor url="https://www.lanshan.com/">huyangyang</vendor>
+    <id>com.android.helper</id>
+    <name>MVVM-Helper</name>
+    <vendor url="https://github.com/DoubleSevenOS">huyangyang</vendor>
 
-    <description>lanshanmvvm</description>
+    <description>android-mvvm-helper</description>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -19,6 +19,7 @@
 
     <applicationListeners>
         <listener class="com.github.sionsxie.armstemplateplugin.listeners.MyProjectManagerListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 
