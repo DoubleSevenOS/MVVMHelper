@@ -4,54 +4,63 @@ import com.android.tools.idea.wizard.template.ModuleTemplateData
 import other.ArmsPluginTemplateProviderImpl
 import other.commonAnnotation
 
-fun baseFragment(isKt: Boolean, provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData) = if (isKt) baseFragmentKt(provider) else baseFragmentJava(provider, data)
+fun baseFragment(isKt: Boolean, provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData) = if (isKt) baseFragmentKt(provider, data) else baseFragmentJava(provider, data)
 
-private fun baseFragmentKt(provider: ArmsPluginTemplateProviderImpl) = """
+private fun baseFragmentKt(provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData) = """
 package ${provider.fragmentPackageName.value}
-import androidx.fragment.app.Fragment
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import cn.skytech.iglobalwin.app.base.SimpleBaseFragment
-import ${provider.moudlePackageName.value}.${provider.pageName.value}Module
-import ${provider.presenterPackageName.value}.${provider.pageName.value}Presenter
-import ${provider.appPackageName.value}.R
-import kotlinx.android.synthetic.main.base_title.*
+import ${provider.mBaseFragmentKtPackage}.${provider.mBaseFragmentKtName}
+import com.android.basekt.base.BaseDataBindingConfig
+import ${
+    if (data.projectTemplateData.applicationPackage == null || data.projectTemplateData.applicationPackage!!.length == 0) {
+        """${data.packageName}"""
+    } else {
+        """${data.projectTemplateData.applicationPackage}"""
+    }
+}.R
+import ${
+    if (data == null || data.projectTemplateData == null || data.projectTemplateData.applicationPackage == null || data.projectTemplateData.applicationPackage!!.length == 0) {
+        """${data.packageName}"""
+    } else {
+        """${data.projectTemplateData.applicationPackage}"""
+    }
+}.databinding.Fragment${provider.pageName.value}Binding
 
-${commonAnnotation(provider)}
-class ${provider.pageName.value}Fragment : SimpleBaseFragment<${provider.pageName.value}Presenter>() , ${provider.pageName.value}Contract.View{
+import ${provider.appPackageName.value}.viewmodel.${provider.pageName.value}ViewModel
+
+class ${provider.pageName.value}Fragment : ${provider.mBaseFragmentKtName}<Fragment${provider.pageName.value}Binding,${provider.pageName.value}ViewModel>(){
+
     companion object {
-    fun newInstance():${provider.pageName.value}Fragment {
-        val fragment = ${provider.pageName.value}Fragment()
-        return fragment
+        @JvmStatic
+        fun newInstance() =
+            ${provider.pageName.value}Fragment()
     }
+
+    override fun initView() {
+
     }
-    override fun setupFragmentComponent(appComponent:AppComponent) {
-        Dagger${provider.pageName.value}Component //如找不到该类,请编译一下项目
-                .builder()
-                .appComponent(appComponent)
-                .${provider.pageName.value[0].toLowerCase()}${provider.pageName.value.substring(1, provider.pageName.value.length)}Module(${provider.pageName.value}Module(this))
-                .build()
-                .inject(this)
+    
+    override fun initData() {
+        mBinding.viewModel=mViewModel
     }
-    override fun initView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):View{
-        return inflater.inflate(R.layout.${provider.fragmentLayoutName.value}, container, false)
-    }
+
     /**
-     * 在 onActivityCreate()时调用
+     * 获取binding相关配置
+     *
+     * @return
      */
-    override fun initData(savedInstanceState: Bundle?) {
-        setToolBarNoBack(toolbar, "${provider.pageName.value}")
-        
-        initListener()
+    override fun getDataBindingConfig(): BaseDataBindingConfig {
+        return BaseDataBindingConfig(R.layout.${provider.fragmentLayoutName.value})
+    }
+
+    /**
+     * 获取viewmodel Clazz
+     *
+     * @return
+     */
+    override fun initViewModelClazz(): Class<${provider.pageName.value}ViewModel> {
+        return ${provider.pageName.value}ViewModel::class.java
     }
     
-    private fun initListener() {
-    
-    }
-    
-    override fun getFragment(): Fragment = this
 }
     
 """
@@ -64,14 +73,14 @@ import com.lanshan.base.base.BaseDataBindingConfig;
 import com.lanshan.base.fragment.BaseDataBindFragment;
 import ${
     if (data.projectTemplateData.applicationPackage == null || data.projectTemplateData.applicationPackage!!.length == 0) {
-        """${provider.moudlePackageName.value}"""
+        """${provider.viewModelPackageName.value}"""
     } else {
         """${data.projectTemplateData.applicationPackage}"""
     }
 }.R;
 import ${
     if (data.projectTemplateData.applicationPackage == null || data.projectTemplateData.applicationPackage!!.length == 0) {
-        """${provider.moudlePackageName.value}"""
+        """${provider.viewModelPackageName.value}"""
     } else {
         """${data.projectTemplateData.applicationPackage}"""
     }

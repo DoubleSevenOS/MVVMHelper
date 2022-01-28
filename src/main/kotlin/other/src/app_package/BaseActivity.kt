@@ -2,36 +2,44 @@ package other.src.app_package
 
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import other.ArmsPluginTemplateProviderImpl
+import other.appRPath
 import other.commonAnnotation
 
-fun baseActivity(isKt: Boolean, provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData) = if (isKt) baseActivityKt(provider) else baseActivityJava(provider, data)
+fun baseActivity(isKt: Boolean, provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData) = if (isKt) baseActivityKt(provider,data) else baseActivityJava(provider, data)
 
-private fun baseActivityKt(provider: ArmsPluginTemplateProviderImpl) = """
+private fun baseActivityKt(provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData) = """
 package ${provider.activityPackageName.value}
-import android.app.Activity
-import android.os.Bundle
-import ${provider.moudlePackageName.value}.${provider.pageName.value}Module
-import ${provider.presenterPackageName.value}.${provider.pageName.value}Presenter
-import ${provider.appPackageName.value}.R
-import kotlinx.android.synthetic.main.base_title.*
-
+import ${appRPath(provider,data)}.R
+import ${appRPath(provider,data)}.databinding.Activity${provider.pageName.value}Binding
+import ${provider.appPackageName.value}.viewmodel.${provider.pageName.value}ViewModel
+import ${provider.mBaseActivityKtPackage}.${provider.mBaseActivityKtName}
+import com.android.basekt.base.BaseDataBindingConfig
 ${commonAnnotation(provider)}
-class ${provider.pageName.value}Activity : SimpleBaseActivity<${provider.pageName.value}Presenter>() , ${provider.pageName.value}Contract.View {
+class ${provider.pageName.value}Activity : ${provider.mBaseActivityKtName}<Activity${provider.pageName.value}Binding,${provider.pageName.value}ViewModel>() {
+    override fun initView() {
+    }
 
-    override fun initView(savedInstanceState: Bundle?): Int {
-        return R.layout.${provider.activityLayoutName.value} //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 测试测试
+    override fun initData() {  
     }
     
-    override fun initData(savedInstanceState: Bundle?) {
-        setToolBar(toolbar, "${provider.pageName.value}")
-        
-        initListener()
+    /**
+     * 获取binding相关配置
+     *
+     * @return
+     */
+    override fun getDataBindingConfig(): BaseDataBindingConfig {
+        return BaseDataBindingConfig(R.layout.${provider.activityLayoutName.value})
     }
-    private fun initListener() {
     
+    /**
+     * 获取viewmodel Clazz
+     *
+     * @return
+     */
+    override fun initViewModelClazz(): Class<${provider.pageName.value}ViewModel> {
+        return ${provider.pageName.value}ViewModel::class.java
     }
     
-    override fun getActivity(): Activity = this
 }
     
 """

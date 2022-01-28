@@ -1,1 +1,1 @@
-rootProject.name = "lanshan-base"
+rootProject.name = "MvvmHelper"

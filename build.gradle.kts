@@ -18,6 +18,7 @@ plugins {
     id("io.gitlab.arturbosch.detekt") version "1.16.0"
     // ktlint linter - read more: https://github.com/JLLeitschuh/ktlint-gradle
     id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
+    kotlin("jvm") version "1.6.0"
 }
 
 group = properties("pluginGroup")
@@ -33,17 +34,18 @@ repositories {
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.16.0")
     compileOnly(files("libs/wizard-template.jar"))
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 // Configure gradle-intellij-plugin plugin.
 // Read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
     pluginName = properties("pluginName")
-    version = properties("platformVersion")
+//    version = properties("platformVersion")
     type = properties("platformType")
     downloadSources = properties("platformDownloadSources").toBoolean()
     updateSinceUntilBuild = true
-
+    localPath="/Applications/IntelliJ IDEA CE.app/Contents"
     // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
     setPlugins(*properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty).toTypedArray())
 }
@@ -122,4 +124,12 @@ tasks {
         // https://plugins.jetbrains.com/docs/intellij/deployment.html#specifying-a-release-channel
         channels(properties("pluginVersion").split('-').getOrElse(1) { "default" }.split('.').first())
     }
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
 }
