@@ -18,15 +18,15 @@ private var activityFileName = "targetActivity"
 private var viewModelFileName = "targetViewModel"
 private var xmlFileName = "targetXml"
 
-private var activityPackageNameFlag = "{activityPackageName}"
-private var fragmentPackageNameFlag = "{fragmentPackageName}"
+
 private var appRPathFlag = "{appRPath}"
+private var baseActivityPathFlag = "{baseActivityPath}"
+private var activityPackageNameFlag = "{activityPackageName}"
 private var activityDataBindingPathFlag = "{activityDataBindingPath}"
+private var baseFragmentPathFlag = "{baseFragmentPath}"
+private var fragmentPackageNameFlag = "{fragmentPackageName}"
 private var fragmentDataBindingPathPathFlag = "{fragmentDataBindingPath}"
 private var viewModelPathFlag = "{viewModelPath}"
-private var baseActivityPathFlag = "{baseActivityPath}"
-private var baseFragmentPathFlag = "{baseFragmentPath}"
-
 private var pageNameFlag = "{pageName}"
 private var pageXmlFlag = "{layoutId}"
 

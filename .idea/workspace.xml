@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073b2a4f-6197-4cac-9ca1-7bc1d0462b04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BaseFragmentLocal.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/pluginIcon.png" afterDir="false" />
+    <list default="true" id="073b2a4f-6197-4cac-9ca1-7bc1d0462b04" name="Default Changelist" comment="feat:添加动态配置关键字">
+      <change afterPath="$PROJECT_DIR$/targetActivity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/targetFragment" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/targetViewModel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/targetXml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/META-INF/lanshan-base.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/META-INF/MVVMHelper.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/com/fdd/mvvmgenerator/core/TemplateParamFactory.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/com/github/sionsxie/armstemplateplugin/MyBundle.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/com/github/sionsxie/armstemplateplugin/MyBundleKt.class" beforeDir="false" />
@@ -55,6 +63,9 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/ArmsPluginTemplateProviderImpl$presenterPackageName$1$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/ArmsPluginTemplateProviderImpl$presenterPackageName$1$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/ArmsPluginTemplateProviderImpl$presenterPackageName$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/ArmsPluginTemplateProviderImpl$viewModelPackageName$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/ArmsPluginTemplateProviderImpl$viewModelPackageName$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/ArmsPluginTemplateProviderImpl$viewModelPackageName$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/ArmsPluginTemplateProviderImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/ArmsRecipeKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/GlobalsKt.class" beforeDir="false" />
@@ -62,10 +73,11 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/src/AndroidManifestKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/src/app_package/BaseActivityKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/src/app_package/BaseFragmentKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/src/app_package/BaseFragmentLocalKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/src/app_package/BaseModelKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/src/app_package/BaseViewModelKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/other/src/app_package/BuildBeanKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/META-INF/lanshan-base.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/META-INF/MVVMHelper.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/fdd/mvvmgenerator/core/TemplateParamFactory.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/github/sionsxie/armstemplateplugin/MyBundle.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/github/sionsxie/armstemplateplugin/MyBundleKt.class" beforeDir="false" />
@@ -111,6 +123,9 @@
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/ArmsPluginTemplateProviderImpl$presenterPackageName$1$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/ArmsPluginTemplateProviderImpl$presenterPackageName$1$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/ArmsPluginTemplateProviderImpl$presenterPackageName$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/ArmsPluginTemplateProviderImpl$viewModelPackageName$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/ArmsPluginTemplateProviderImpl$viewModelPackageName$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/ArmsPluginTemplateProviderImpl$viewModelPackageName$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/ArmsPluginTemplateProviderImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/ArmsRecipeKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/GlobalsKt.class" beforeDir="false" />
@@ -118,27 +133,21 @@
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/src/AndroidManifestKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/src/app_package/BaseActivityKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/src/app_package/BaseFragmentKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/src/app_package/BaseFragmentLocalKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/src/app_package/BaseModelKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/src/app_package/BaseViewModelKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/other/src/app_package/BuildBeanKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/arms-template-plugin-0.0.4.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/arms-template-plugin-1.0.0.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/lanshan-template-plugin-1.0.1.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/download-task/jbr-11_0_7-osx-x64-b765.65.tar.gz2075767206991135405.part" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/download-task/jbr-11_0_7-osx-x64-b765.65.tar.gz3905482749347345340.part" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/download-task/jbr-11_0_7-osx-x64-b765.65.tar.gz3944413160980581668.part" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/download-task/jbr-11_0_7-osx-x64-b765.65.tar.gz7656596137275651444.part" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/colors.scheme.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/debugger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/jdk.table.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/laf.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/path.macros.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/android-mvvm-helper-plugin-1.0.1.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/android-mvvm-helper-plugin-1.0.2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/sunmi-os-cit-plugin-1.0.0.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/sunmi-os-cit-plugin-1.1.1.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/sunmi-os-cit-plugin-1.2.0.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/sunmi-os-plugin-1.0.0.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/updates.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/port.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/plugins/lanshan-template-plugin/lib/lanshan-base-1.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/plugins/android-mvvm-helper-plugin/lib/MVVMHelper-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/plugins/availables.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/.home" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageData" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageRecordIndex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/attrib.dat.storageData" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/attrib.dat.storageRecordIndex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/content.dat.storageData" beforeDir="false" />
@@ -593,13 +602,20 @@
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/yaml.keys.name/yaml.keys.name_inputs.len" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/log/idea.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/port.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/armstemplateplugin004jar-classes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/MVVMHelper101jar-classes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/MVVMHelper102jar-classes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/MVVMHelper120jar-classes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/SunmiOsCit100jar-classes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/SunmiOsCit111jar-classes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/SunmiOsCit120jar-classes.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream.len" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab_i" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab_i.len" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab" beforeDir="false" />
@@ -634,7 +650,9 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab_i" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab_i.len" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" />
@@ -677,22 +695,22 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i.len" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/lanshanbase004jar-classes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/lanshanbase100jar-classes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/lanshanbase101jar-classes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/lanshan-base-1.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/lanshan-base-1.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libsSearchableOptions/lib/searchableOptions-0.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/MVVMHelper-1.0.2.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libsSearchableOptions/lib/searchableOptions-1.0.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libsSearchableOptions/lib/searchableOptions-1.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libsSearchableOptions/lib/searchableOptions-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libsSearchableOptions/lib/searchableOptions-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libsSearchableOptions/lib/searchableOptions-1.2.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/pluginIcon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/pluginIcon2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/pluginIcons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/pluginIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/pluginIcon2.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/messages/MyBundle.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/searchableOptions/Groovy.jar/search/Groovy.jar.searchableOptions.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/searchableOptions/adt-ui.jar/search/adt-ui.jar.searchableOptions.xml" beforeDir="false" />
@@ -753,22 +771,8 @@
       <change beforePath="$PROJECT_DIR$/build/searchableOptions/yaml.jar/search/yaml.jar.searchableOptions.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/jarSearchableOptions/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/ArmsPluginTemplateProviderImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/ArmsPluginTemplateProviderImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/ArmsRecipe.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/ArmsRecipe.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/Globals.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/Globals.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/TemplateParamFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/TemplateParamFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/res/layout/SimpleXml.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/res/layout/SimpleXml.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/src/AndroidManifest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/src/AndroidManifest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BaseActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BaseFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BaseModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BaseModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BaseViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BaseViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BuildBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/other/src/app_package/BuildBean.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/pluginIcon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/pluginIcons.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -939,6 +943,14 @@
       <option name="presentableId" value="Default" />
       <updated>1629164577913</updated>
     </task>
+    <task id="LOCAL-00001" summary="feat:添加动态配置关键字">
+      <created>1643364980339</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1643364980339</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -952,6 +964,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat:添加动态配置关键字" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:添加动态配置关键字" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

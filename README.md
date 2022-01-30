@@ -53,3 +53,43 @@ tip：
    - widgets里的widgets控件必须有default 属性，不然菜单里看不到模板
    - wizard-template.jar这个jar和JetBrains里的wizardTemplate.plugin-xx.x.x.jar里面api可能有点不一样，已本地的为准
    - 如果出现中文乱码在 build.gradle.kts tasks里的withType<JavaCompile> 加 options.encoding = "UTF-8"
+
+
+
+
+
+
+---
+---
+
+-  **自定义文件说明**
+
+| 关键字 | 示例 | 说明 |
+| --- | --- | --- |
+| **{baseActivityPath}** |com.android.base.activity.BaseDataBindingActivity  | 当前的BaseActivity地址 |
+|**{activityPackageName}**| com.xxx.xxx.activity |当前创建的Activity的包名 |
+| **{activityDataBindingPath}**  | com.xxx.xxx.databinding.ActivityMainBinding | 当前的activityBinding地址 |
+|**{baseFragmentPath}** | com.android.base.fragment.BaseDataBindFragment |BaseFragment地址|
+|**{fragmentPackageName}**| com.xxx.xxx.fragment |当前创建的Fragment的包名 |
+| **{fragmentDataBindingPath}**  | com.xxx.xxx.databinding.FragmentMainBinding| 当前fragmentDatabinding
+|  **{viewModelPath}** | com.xxx.xxx.viewmodel.MainViewModel | 当前的viewModel地址 |
+| **{appRPath}** |com.xxx.xxx.R  | R文件的地址 |
+|**{pageName}**| Main |当前面页面的名称 |
+|**{layoutId}**| R.layout.activity_main or R.layout.fragment_test |当前layoutId地址 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -21,11 +21,11 @@ fun RecipeExecutor.armsRecipe(provider: ArmsPluginTemplateProviderImpl, data: Mo
     var isKt = data.projectTemplateData.language == Language.Kotlin
 
 //****************************************************************************************************************
-    val testFile = File(
-        data.rootDir,
-        "${fFmSlashedPackageName(provider.fragmentPackageName.value)}/testFile"
-    )
-    save(baseFragmentLocal(isKt, provider, data), testFile)
+//    val testFile = File(
+//        data.rootDir,
+//        "${fFmSlashedPackageName(provider.fragmentPackageName.value)}/testFile"
+//    )
+//    save(baseFragmentLocal(isKt, provider, data), testFile)
 //****************************************************************************************************************
 
     /**

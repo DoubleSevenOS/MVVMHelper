@@ -1,0 +1,37 @@
+package {activityPackageName};
+import androidx.annotation.NonNull;
+import com.android.base.base.BaseDataBindingConfig;
+import {appRPath};
+import {activityDataBindingPath};
+import {viewModelPath};
+import {baseActivityPath};
+
+/**
+*我是目标文件生成的Activity
+*斌姐GG 38 cm
+*/
+public class {pageName}Activity extends BaseDataBindingActivity<Activity{pageName}Binding,{pageName}ViewModel> {
+
+    @NonNull
+    @Override
+    public BaseDataBindingConfig getDataBindingConfig() {
+        return new BaseDataBindingConfig({layoutId});
+    }
+
+    @NonNull
+    @Override
+    public Class<{pageName}ViewModel> initViewModelClazz() {
+        return {pageName}ViewModel.class;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+}
