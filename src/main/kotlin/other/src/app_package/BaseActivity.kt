@@ -5,8 +5,10 @@ import other.ArmsPluginTemplateProviderImpl
 import other.appRPath
 import other.commonAnnotation
 
-fun baseActivity(isKt: Boolean, provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData) =
-    if (isKt) baseActivityKt(provider, data) else baseActivityJava(provider, data)
+fun baseActivity(isKt: Boolean, provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData):String{
+    return   if (isKt) baseActivityKt(provider, data) else baseActivityJava(provider, data)
+}
+
 
 private fun baseActivityKt(provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData) = """
 package ${provider.activityPackageName.value}
@@ -40,9 +42,7 @@ class ${provider.pageName.value}Activity : ${provider.mBaseActivityKtName}<Activ
     override fun initViewModelClazz(): Class<${provider.pageName.value}ViewModel> {
         return ${provider.pageName.value}ViewModel::class.java
     }
-    
 }
-    
 """
 
 private fun baseActivityJava(provider: ArmsPluginTemplateProviderImpl, data: ModuleTemplateData) = """

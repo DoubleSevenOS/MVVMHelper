@@ -6,9 +6,9 @@ import other.commonAnnotation
 fun baseBean(isKt: Boolean, provider: ArmsPluginTemplateProviderImpl) = if (isKt) baseModelKt(provider) else buildBeanJava(provider)
 
 private fun baseModelKt(provider: ArmsPluginTemplateProviderImpl) = """
-package ${provider.modelPackageName.value}
+package ${provider.beanPackageName.value}
 ${commonAnnotation(provider)}
-class${provider.pageName.value}Bean {
+class ${provider.pageName.value}Bean {
 
 } 
 """

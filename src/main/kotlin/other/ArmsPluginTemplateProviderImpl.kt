@@ -13,10 +13,10 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
     override fun getTemplates(): List<Template> = listOf(armsTemplate)
 
     //相对路径，鼠标开始点击创建的位置
-    val fragmentDir = ".fragment"
-    val activityDir = ".activity"
-    val vmDir = ".viewmodel"
-    val modelDir = ".model"
+    private val fragmentDir = ".fragment"
+    private val activityDir = ".activity"
+    private val vmDir = ".viewmodel"
+    private val modelDir = ".model"
     lateinit var moduleTemplateData: ModuleTemplateData
 
     val mBaseActivityJavaName = "BaseDataBindingActivity"
@@ -38,7 +38,7 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
     val mBaseViewModelKtPackage = "com.android.basekt.viewmodel"
 
 
-    val armsTemplate: Template
+    private  val armsTemplate: Template
         get() = template {
             revision = 1
             name = "Android MVVM Helper"
@@ -111,7 +111,7 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
     /** 是否需要 Activity */
     val needActivity = booleanParameter {
         name = "Generate Activity"
-        default = true
+        default = false
         help = "是否需要生成 Activity ? 不勾选则不生成"
     }
 
@@ -181,16 +181,8 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
 
     val needViewModel = booleanParameter {
         name = "Generate ViewModel"
-        default = true
+        default = false
         help = "是否需要生成 VM ? 不勾选则不生成"
-    }
-    val presenterPackageName = stringParameter {
-        name = "VM Package Name"
-        constraints = listOf(Constraint.PACKAGE, Constraint.STRING)
-        suggest = { "${appPackageName.value}${vmDir}" }
-        default = "${appPackageName.value}${vmDir}"
-        visible = { needViewModel.value }
-        help = "Presenter 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
     }
     val viewModelPackageName = stringParameter {
         name = "VM Package Name"
@@ -227,25 +219,6 @@ class ArmsPluginTemplateProviderImpl : WizardTemplateProvider() {
         visible = { needBean.value }
         help = "Bean 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
     }
-
-    /** dagger 相关 */
-    val needDagger = booleanParameter {
-        name = "Generate Dagger (Moudle And Component)"
-        default = true
-        help = "是否需要生成 Dagger 组件? 不勾选则不生成"
-    }
-
-
-    val moudlePackageName = stringParameter {
-        name = "Moudle Package Name"
-        constraints = listOf(Constraint.PACKAGE, Constraint.STRING)
-        suggest = { "${appPackageName.value}.di.module" }
-        default = "${appPackageName.value}.di.module"
-        visible = { needDagger.value }
-        help = "Moudle 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
-    }
-
-
 //    ${
 //        if (data.projectTemplateData.applicationPackage == null || data.projectTemplateData.applicationPackage!!.length == 0) {
 //            """${provider.presenterPackageName.value}"""

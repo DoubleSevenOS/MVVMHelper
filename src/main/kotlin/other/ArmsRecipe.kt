@@ -17,7 +17,6 @@ fun RecipeExecutor.armsRecipe(provider: ArmsPluginTemplateProviderImpl, data: Mo
      * 判断当前语言java / kt
      */
     val languageSuffix = if (data.projectTemplateData.language == Language.Java) "java" else "kt"
-
     var isKt = data.projectTemplateData.language == Language.Kotlin
 
 //****************************************************************************************************************
